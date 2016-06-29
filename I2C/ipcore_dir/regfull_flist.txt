@@ -1,0 +1,16 @@
+# Output products list for <regfull>
+core_resources.txt
+gui_latency.txt
+regfull/doc/c_counter_binary_v11_0_readme.txt
+regfull/doc/c_counter_binary_v11_0_vinfo.html
+regfull/doc/ds215_counter.pdf
+regfull.asy
+regfull.gise
+regfull.ngc
+regfull.sym
+regfull.v
+regfull.veo
+regfull.xco
+regfull.xise
+regfull_flist.txt
+regfull_xmdf.tcl
