@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module REGFULL(
+/module REGFULL(
 	input clk,
 	input fclk,
 	output counter_check
@@ -26,7 +26,7 @@ module REGFULL(
 	 reg enabler;
 	 reg[3:0] count_comp;
 	 
-always @ (negedge clk or negedge fclk) begin
+always @ (negedge fclk) begin
 	if (!clk) enabler <= 1;
 	else enabler <= 0;
 end
