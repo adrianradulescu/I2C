@@ -1,12 +1,13 @@
 module StrobeGeneratorWhenFull(
 		input controlClock,
-		input strobeEnable,
+		input  strobeGeneratorEnable,
 		output validationStrobe
     );
 
 	always@(posedge controlClock)
-		if(strobeEnable)
+		if(strobeGeneratorEnable)
 			validationStrobe <= 1;
 		else 
 			validationStrobe <= 0;
+			
 endmodule

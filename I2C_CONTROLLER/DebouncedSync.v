@@ -1,25 +1,23 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    15:36:54 06/30/2016 
-// Design Name: 
-// Module Name:    DebouncedSync 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module DebouncedSync(
+		input 						inputData,
+		input 						fastClock,
+		output			  	  	  outputData
     );
+	 
+		wire 						  	syncData;
+		
+	 FlipFlop 			  myFlipFlop(
+		.inputData			 	 (inputData),
+		.fastClock			 	 (fastClock),
+		.outputData				  (syncData)
+	 );
 
-
-endmodule
+	Debouncer #(3) 	 myDebouncer(
+		.syncedSignal			(syncedData),
+		.fastClock				 (fastClock),
+		.debounced			 	(outputData)
+	 );
+	 
+endmodule 

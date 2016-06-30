@@ -7,14 +7,14 @@ module ParityChecker(
     );
   
 	assign validationStrobe = ((
-					DATA_INPUT_CHECKER[0] ^
-					DATA_INPUT_CHECKER[1] ^
-					DATA_INPUT_CHECKER[2] ^
-					DATA_INPUT_CHECKER[3] ^
-					DATA_INPUT_CHECKER[4] ^ 
-					DATA_INPUT_CHECKER[5] ^
-					DATA_INPUT_CHECKER[6] ^
-					DATA_INPUT_CHECKER[7] == 
+					scanCodeForCheck[0] ^
+					scanCodeForCheck[1] ^
+					scanCodeForCheck[2] ^
+					scanCodeForCheck[3] ^
+					scanCodeForCheck[4] ^ 
+					scanCodeForCheck[5] ^
+					scanCodeForCheck[6] ^
+					scanCodeForCheck[7] == 
 					PARITY_CHECK_BIT))
 				 ?(1):(0);
 

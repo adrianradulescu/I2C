@@ -19,45 +19,43 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module AsyncDebounceWithShiftRegister(
-			input 								   DATA,
-			input 		 						    CLK,
-			input							 		   FCLK,
-			output 				   PARITY_CHECK_BIT,
-			output	[7:0]		  DATA_OUTPUT_CHECK,
-			output	[7:0]		  			 SCAN_CODE
+			input 								   data,
+			input 		 						    clk,
+			input							 		   fclk,
+			input					 	 confirmSendData,
+			output 				     parityCheckBit,
+			output 	[1:0]commInitBitsforChecking,
+			output	[7:0]		  			  scanCode
     );
 	 
-			wire						SLOW_CLOCK = CLK;
-		// pentru un anume motiv pe care nu il
-		// inteleg, nu merge sa folosesc SLOW_CLK
-		// in loc de CLK pentru circuitul de debounce
-		// si sincronizare
-			wire					  FAST_CLOCK = FCLK;
-			wire 						  DEBOUNCED_DATA;
-			wire				  DEBOUNCED_SLOW_CLOCK;
-			wire								  DATA_VAL;
-	
-			reg [7 : 0] 			CIRCUIT_OUT_DATA;
+			wire						slowClock;
+			wire					   fastClock;
+			wire 				dataForShifting;
+			wire		 slowClockForShifting;
+			wire				 dataValidation;
+			
+			assign slowClock = clk;
+			assign fastClock = fclk;
 			
 	 SynchronizationAndDebounce mySyncAndDebounceData(
-			.INPUT_DATA							 (DATA),
-			.FAST_CLOCK					 (FAST_CLOCK),
-			.OUTPUT_DATA			(DEBOUNCED_DATA)
+			.inputData(data),
+			.fastClock(fastClock),
+			.outputData(dataForShifting)
 		);
-		
-	 SynchronizationAndDebounce mySyncAndDebounceClock(
-			.INPUT_DATA							  (CLK),
-			.FAST_CLOCK					 (FAST_CLOCK),
-			.OUTPUT_DATA	(DEBOUNCED_SLOW_CLOCK)
-		);
-		
-	 ShiftRegister #(11)					  myShiftRegister(
-			.DEBOUNCED_DATA		(DEBOUNCED_DATA),
-			.CONTROL_CLOCK				 (SLOW_CLOCK),
-			.PARALLEL_DATA_OUTPUT	  (SCAN_CODE),			
-			.PARITY_CHECK_BIT	 (PARITY_CHECK_BIT)
-		);
-		
-		assign DATA_OUTPUT_CHECK = SCAN_CODE;
 	
+	 SynchronizationAndDebounce mySyncAndDebounceClock(
+			.inputData(slowClock),
+			.fastClock(fastClock),
+			.outputData(slowClockForShifting)
+		);
+
+	 ShiftRegister #(11)	myShiftRegister(
+			.controlClock(slowClock),
+			.confirmSendData(confirmSendData),
+			.debouncedData(dataForShifting),
+			.parallelDataOutput(scanCode),
+			.parityCheckBit(parityCheckBit),
+			.commInitBits(commInitBitsForChecking),
+		);
+
 endmodule
