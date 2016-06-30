@@ -28,6 +28,7 @@ module FullI2CController(
 		wire [7 : 0]					 DATA_OUTPUT_CHECK;
 		wire 								 PARITY_CHECK_WIRE;
 		wire [7 : 0]								SCAN_CODE;
+		wire 										  	 DATA_VAL;
 		
 	AsyncDebounceWithShiftRegister SyncAndParalelizationModule(
 			.DATA									 		(DATA),
@@ -39,12 +40,15 @@ module FullI2CController(
     );
 
 	 DataValidCheckerWithOutRegFull 	 			  CheckingModule(
+			.FAST_CLOCK                         (FCLK),
 			.PARITY_CHECK_BIT	  	  (PARITY_CHECK_WIRE),
 			.DATA_INPUT_CHECKER	  (DATA_OUTPUT_CHECK),
 			.DATA_VALID							  (DATA_VAL)
       );
 	 
-	 always@(posedge CLK && SCAN_CODE)
-		if(DATA_VAL) CIRCUIT_OUT_DATA <= SCAN_CODE;
-			
+	 always@(posedge FCLK) begin
+		CIRCUIT_OUT_DATA = (DATA_VAL)?(SCAN_CODE):(8'b0);
+		$display("\n\n LED_OUTPUT: ", CIRCUIT_OUT_DATA);
+	 end
+      	
 endmodule

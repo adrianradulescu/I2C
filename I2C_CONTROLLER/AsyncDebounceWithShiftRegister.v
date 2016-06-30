@@ -35,9 +35,6 @@ module AsyncDebounceWithShiftRegister(
 			wire					  FAST_CLOCK = FCLK;
 			wire 						  DEBOUNCED_DATA;
 			wire				  DEBOUNCED_SLOW_CLOCK;
-			wire								  DATA_VAL;
-	
-			reg [7 : 0] 			CIRCUIT_OUT_DATA;
 			
 	 SynchronizationAndDebounce mySyncAndDebounceData(
 			.INPUT_DATA							 (DATA),

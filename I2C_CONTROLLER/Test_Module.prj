@@ -1,0 +1,8 @@
+verilog work "FLIP_FLOP.v"
+verilog work "Debouncer.v"
+verilog work "SynchronizationAndDebounce.v"
+verilog work "ShiftRegister.v"
+verilog work "DataValidCheckerWithRegFull.v"
+verilog work "AsyncDebounceWithShiftRegister.v"
+verilog work "FullI2CController.v"
+verilog work "Test_Module.v"

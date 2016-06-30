@@ -13,15 +13,14 @@ module ShiftRegister
 			SHIFT_REGISTER <= {SHIFT_REGISTER[REGISTER_SIZE - 1 : 0], 
 									 DEBOUNCED_DATA};
 		
-		reg [3:0] COUNTER_REGISTER = 4'b000;
+		reg [3:0] COUNTER_REGISTER = 4'b0000;
 		
 		always@(posedge CONTROL_CLOCK)
 			if(COUNTER_REGISTER == 4'b1011) begin 
-				PARALLEL_DATA_OUTPUT <= SHIFT_REGISTER[9:2];
-				PARITY_CHECK_BIT		<= SHIFT_REGISTER[1]	 ;
-				COUNTER_REGISTER 		<= 4'b0000				 ;	
-				end
-				
-		always@(posedge CONTROL_CLOCK)
+				PARALLEL_DATA_OUTPUT <= SHIFT_REGISTER[8:1];
+				PARITY_CHECK_BIT		<= SHIFT_REGISTER[9]	 ;
+				COUNTER_REGISTER 		<= 4'b0000				 ;
+			end
+			else
 				COUNTER_REGISTER 		<= COUNTER_REGISTER + 1;
 endmodule
