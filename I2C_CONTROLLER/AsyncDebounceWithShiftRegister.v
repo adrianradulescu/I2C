@@ -19,6 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module AsyncDebounceWithShiftRegister(
+<<<<<<< HEAD
 			input 								   data,
 			input 		 						    clk,
 			input							 		   fclk,
@@ -36,6 +37,25 @@ module AsyncDebounceWithShiftRegister(
 			
 			assign slowClock = clk;
 			assign fastClock = fclk;
+=======
+			input 								   DATA,
+			input 		 						    CLK,
+			input							 		   FCLK,
+			output 				   PARITY_CHECK_BIT,
+			output	[7:0]		  DATA_OUTPUT_CHECK,
+			output 	[3:0]			  COUNT_REGISTER,
+			output	[7:0]		  			 SCAN_CODE
+    );
+	 
+			wire						SLOW_CLOCK = CLK;
+		// pentru un anume motiv pe care nu il
+		// inteleg, nu merge sa folosesc SLOW_CLK
+		// in loc de CLK pentru circuitul de debounce
+		// si sincronizare
+			wire					  FAST_CLOCK = FCLK;
+			wire 						  DEBOUNCED_DATA;
+			wire				  DEBOUNCED_SLOW_CLOCK;
+>>>>>>> a23024b6dd3298260bb29c551e9c1fd91fcf8772
 			
 	 SynchronizationAndDebounce mySyncAndDebounceData(
 			.inputData(data),
@@ -48,6 +68,7 @@ module AsyncDebounceWithShiftRegister(
 			.fastClock(fastClock),
 			.outputData(slowClockForShifting)
 		);
+<<<<<<< HEAD
 
 	 ShiftRegister #(11)	myShiftRegister(
 			.controlClock(slowClock),
@@ -56,6 +77,16 @@ module AsyncDebounceWithShiftRegister(
 			.parallelDataOutput(scanCode),
 			.parityCheckBit(parityCheckBit),
 			.commInitBits(commInitBitsForChecking),
+=======
+		
+	 ShiftRegister #(11)					  myShiftRegister(
+			.FCLK 						 (FAST_CLOCK),
+			.DEBOUNCED_DATA		(DEBOUNCED_DATA),
+			.CONTROL_CLOCK				 (SLOW_CLOCK),
+			.PARALLEL_DATA_OUTPUT	  (SCAN_CODE),
+			.OUTPUT_COUNTER_REGISTER(COUNT_REGISTER),
+			.PARITY_CHECK_BIT	 (PARITY_CHECK_BIT)
+>>>>>>> a23024b6dd3298260bb29c551e9c1fd91fcf8772
 		);
 
 endmodule

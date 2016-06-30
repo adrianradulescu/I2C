@@ -1,0 +1,12 @@
+net "CLK" 					  loc = R12;
+NET "CLK" CLOCK_DEDICATED_ROUTE = FALSE;
+net "FCLK" 					  loc =  B8;
+net "DATA" 					  loc = P11;
+net "CIRCUIT_OUT_DATA[0]" loc = J14; 
+net "CIRCUIT_OUT_DATA[1]" loc = J15;
+net "CIRCUIT_OUT_DATA[2]" loc = K15;
+net "CIRCUIT_OUT_DATA[3]" loc = K14;
+net "CIRCUIT_OUT_DATA[4]" loc = E17;
+net "CIRCUIT_OUT_DATA[5]" loc = P15;
+net "CIRCUIT_OUT_DATA[6]" loc = 	F4;
+net "CIRCUIT_OUT_DATA[7]" loc = 	R4;

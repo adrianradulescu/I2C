@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/student/Desktop/I2C/I2C_CONTROLLER/FullI2CController.ncd
+OUTFILE=/home/student/Desktop/I2C/I2C_CONTROLLER/FullI2CController.bit
+FAMILY=Spartan3E
+PART=xc3s500e-5fg320
+WORKINGDIR=/home/student/Desktop/I2C/I2C_CONTROLLER
+LICENSE=WebPack
+USER_INFO=202860492_0_0_807
