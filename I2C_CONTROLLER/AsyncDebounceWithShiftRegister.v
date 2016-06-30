@@ -24,6 +24,7 @@ module AsyncDebounceWithShiftRegister(
 			input							 		   FCLK,
 			output 				   PARITY_CHECK_BIT,
 			output	[7:0]		  DATA_OUTPUT_CHECK,
+			output 	[3:0]			  COUNT_REGISTER,
 			output	[7:0]		  			 SCAN_CODE
     );
 	 
@@ -49,9 +50,11 @@ module AsyncDebounceWithShiftRegister(
 		);
 		
 	 ShiftRegister #(11)					  myShiftRegister(
+			.FCLK 						 (FAST_CLOCK),
 			.DEBOUNCED_DATA		(DEBOUNCED_DATA),
 			.CONTROL_CLOCK				 (SLOW_CLOCK),
-			.PARALLEL_DATA_OUTPUT	  (SCAN_CODE),			
+			.PARALLEL_DATA_OUTPUT	  (SCAN_CODE),
+			.OUTPUT_COUNTER_REGISTER(COUNT_REGISTER),
 			.PARITY_CHECK_BIT	 (PARITY_CHECK_BIT)
 		);
 		

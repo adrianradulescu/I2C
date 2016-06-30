@@ -6,7 +6,7 @@ Loading device for application Rf_Device from file '3s500e.nph' in environment
 speed -5
 Opened constraints file FullI2CController.pcf.
 
-Thu Jun 30 13:02:21 2016
+Thu Jun 30 15:07:01 2016
 
 /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No FullI2CController.ncd 
 

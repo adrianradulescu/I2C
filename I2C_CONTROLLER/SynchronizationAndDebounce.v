@@ -13,7 +13,7 @@ module SynchronizationAndDebounce(
 		.OUTPUT_DATA			(SYNCED_DATA)
 	 );
 
-	Debouncer #(3) 	 myDebouncer(
+	Debouncer #(4) 	 myDebouncer(
 		.SYNCED_SIGNAL			(SYNCED_DATA),
 		.FAST_CLOCK				 (FAST_CLOCK),
 		.DEBOUNCED			 	(OUTPUT_DATA)

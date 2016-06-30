@@ -4,12 +4,14 @@ module DataValidCheckerWithOutRegFull(
 		input 							  FAST_CLOCK,
 		input 	  		 		  PARITY_CHECK_BIT,
 		input  			[7:0]	DATA_INPUT_CHECKER,
+		input 			[3:0]				  COUNTER,
 		output reg 			  		  	  DATA_VALID
     );
 
 		// Pro tip: Posedge ori Negedge
 		//				Niciodata impreuna
 		always @ (posedge FAST_CLOCK) begin
+				if(COUNTER == 4'b1011)
 					DATA_VALID <= (DATA_INPUT_CHECKER[0] ^
 						DATA_INPUT_CHECKER[1] ^
 						DATA_INPUT_CHECKER[2] ^
@@ -19,6 +21,7 @@ module DataValidCheckerWithOutRegFull(
 						DATA_INPUT_CHECKER[6] ^
 						DATA_INPUT_CHECKER[7] == 
 						PARITY_CHECK_BIT);
+
 			if (DATA_VALID == 1) DATA_VALID <= 0;
 		end
 endmodule

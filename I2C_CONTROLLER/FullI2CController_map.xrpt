@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Thu Jun 30 13:02:10 2016">
+  <application stringID="Map" timeStamp="Thu Jun 30 15:06:50 2016">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -33,7 +33,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i5-4570S CPU @ 2.90GHz"/>
-          <item stringID="speed" value="3391.074 MHz"/>
+          <item stringID="speed" value="3374.082 MHz"/>
         </row>
       </table>
     </section>
@@ -57,23 +57,22 @@
         <item dataType="int" stringID="MAP_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="MAP_FILTERED_WARNINGS" value="0"/>
         <item dataType="int" stringID="MAP_NUM_WARNINGS" value="0"/>
-        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="624888"/>
+        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="624948"/>
         <item stringID="MAP_TOTAL_REAL_TIME" value="1 secs "/>
         <item stringID="MAP_TOTAL_CPU_TIME" value="1 secs "/>
       </section>
       <section stringID="MAP_SLICE_REPORTING">
-        <item AVAILABLE="9312" dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="24"/>
-        <item AVAILABLE="9312" dataType="int" label="Number of 4 input LUTs" stringID="MAP_NUM_4_INPUT_LUT" value="7">
+        <item AVAILABLE="9312" dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="40"/>
+        <item AVAILABLE="9312" dataType="int" label="Number of 4 input LUTs" stringID="MAP_NUM_4_INPUT_LUT" value="13">
           <item dataType="int" label="Number used as Shift registers" stringID="MAP_NUM_SHIFT" value="2"/>
         </item>
-        <item AVAILABLE="4656" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="13">
+        <item AVAILABLE="4656" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="24">
           <item dataType="int" label="Number of Slices containing unrelated logic" stringID="MAP_NUM_SLICE_UNRELATED" value="0"/>
         </item>
       </section>
       <section stringID="MAP_IOB_REPORTING">
         <section stringID="MAP_IOB_DATA">
           <item AVAILABLE="232" dataType="int" stringID="MAP_AGG_BONDED_IO" value="11"/>
-          <item dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="8"/>
         </section>
       </section>
       <section stringID="MAP_HARD_IP_REPORTING">
@@ -102,7 +101,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="2">
@@ -112,7 +110,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="3">
@@ -122,7 +119,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="4">
@@ -132,7 +128,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="5">
@@ -142,7 +137,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="6">
@@ -152,7 +146,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="7">
@@ -162,7 +155,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="8">
@@ -172,7 +164,6 @@
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
             <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
             <item label="IOB&#xA;Delay" stringID="IOB_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="9">

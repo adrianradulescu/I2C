@@ -45,7 +45,7 @@ Setup/Hold to clock FCLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-DATA        |    0.560(R)|    0.952(R)|FCLK_BUFGP        |   0.000|
+DATA        |    0.805(R)|    0.760(R)|FCLK_BUFGP        |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock FCLK to Pad
@@ -53,14 +53,14 @@ Clock FCLK to Pad
                    | clk (edge) |                  | Clock  |
 Destination        |   to PAD   |Internal Clock(s) | Phase  |
 -------------------+------------+------------------+--------+
-CIRCUIT_OUT_DATA<0>|    5.613(R)|FCLK_BUFGP        |   0.000|
-CIRCUIT_OUT_DATA<1>|    5.613(R)|FCLK_BUFGP        |   0.000|
-CIRCUIT_OUT_DATA<2>|    5.614(R)|FCLK_BUFGP        |   0.000|
-CIRCUIT_OUT_DATA<3>|    5.614(R)|FCLK_BUFGP        |   0.000|
-CIRCUIT_OUT_DATA<4>|    5.620(R)|FCLK_BUFGP        |   0.000|
-CIRCUIT_OUT_DATA<5>|    5.620(R)|FCLK_BUFGP        |   0.000|
-CIRCUIT_OUT_DATA<6>|    5.620(R)|FCLK_BUFGP        |   0.000|
-CIRCUIT_OUT_DATA<7>|    5.620(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<0>|    7.693(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<1>|    7.930(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<2>|    7.418(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<3>|    7.366(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<4>|    8.317(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<5>|    7.954(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<6>|    9.102(R)|FCLK_BUFGP        |   0.000|
+CIRCUIT_OUT_DATA<7>|    8.545(R)|FCLK_BUFGP        |   0.000|
 -------------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -68,8 +68,8 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    3.209|         |         |         |
-FCLK           |    1.816|         |         |         |
+CLK            |    2.981|         |         |         |
+FCLK           |    2.605|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock FCLK
@@ -77,12 +77,12 @@ Clock to Setup on destination clock FCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    4.716|         |         |         |
-FCLK           |    1.702|         |         |         |
+CLK            |    4.096|         |         |         |
+FCLK           |    2.421|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Jun 30 13:02:19 2016 
+Analysis completed Thu Jun 30 15:06:59 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
