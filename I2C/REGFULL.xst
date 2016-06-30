@@ -1,0 +1,5 @@
+set -tmpdir "/home/student/I2C/xst/projnav.tmp"
+set -xsthdpdir "/home/student/I2C/xst"
+elaborate
+-ifn REGFULL.prj
+-ifmt mixed
