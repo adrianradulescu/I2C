@@ -1,22 +1,22 @@
 
 module SynchronizationAndDebounce(
-		input 						INPUT_DATA,
-		input 						FAST_CLOCK,
-		output			  	  	  OUTPUT_DATA
+		input 						inputData,
+		input 						fastClock,
+		output			  	  	  outputData
     );
 	 
-		wire 						  SYNCED_DATA;
+		wire 						  	syncData;
 		
 	 FlipFlop 			  myFlipFlop(
-		.INPUT_DATA			 	 (INPUT_DATA),
-		.FAST_CLOCK			 	 (FAST_CLOCK),
-		.OUTPUT_DATA			(SYNCED_DATA)
+		.inputData			 	 (inputData),
+		.fastClock			 	 (fastClock),
+		.outputData				  (syncData)
 	 );
 
 	Debouncer #(3) 	 myDebouncer(
-		.SYNCED_SIGNAL			(SYNCED_DATA),
-		.FAST_CLOCK				 (FAST_CLOCK),
-		.DEBOUNCED			 	(OUTPUT_DATA)
+		.syncedSignal			(syncedData),
+		.fastClock				 (fastClock),
+		.debounced			 	(outputData)
 	 );
 	 
 endmodule

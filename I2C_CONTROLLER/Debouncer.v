@@ -1,8 +1,8 @@
 module Debouncer
   #(parameter FILTER_WIDTH = 3)
-   (input      FAST_CLOCK,
-    input      SYNCED_SIGNAL,
-    output reg DEBOUNCED
+   (input      fastClock,
+    input      syncedSignal,
+    output reg debounced
 	 );
 
 	// Circuitul se bazeaza pe un SR cu care compara
@@ -12,17 +12,17 @@ module Debouncer
 
 	// Solutie propusa pe Doulos
 	
-  reg [FILTER_WIDTH : 0] SHIFTER;
+  reg [FILTER_WIDTH : 0] shifter;
   
-  always @ (posedge FAST_CLOCK) begin
-    if (SHIFTER[FILTER_WIDTH:1] == 3'b000) begin
-			DEBOUNCED <= 0;
+  always @ (posedge fastClock) begin
+    if (shifter[FILTER_WIDTH:1] == 3'b000) begin
+			debounced <= 0;
     end 
 		else 
-		if (SHIFTER[FILTER_WIDTH:1] == 3'b111) begin
-      DEBOUNCED <= 1;
+		if (shifter[FILTER_WIDTH:1] == 3'b111) begin
+			debounced <= 1;
 		end 
-    SHIFTER <= { SHIFTER[FILTER_WIDTH-1 : 0], SYNCED_SIGNAL};
+    shifter <= {shifter[FILTER_WIDTH-1 : 0], syncedSignal};
   end 
   
 endmodule 
